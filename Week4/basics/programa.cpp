@@ -20,16 +20,17 @@ int main(){
 
  float r = 4.0;
 
- StartAnim();
+ //StartAnim();
 
  for (i = 0; i < 10000; i++){
   // std::cout << i << std::endl;
-     StartCuadro();
+  //   StartCuadro();
      theta = drand48()*2.0*pi;
      x += cos(theta);
      y += sin(theta);
-     std::cout<<" , "<<x<<"+"<<r<<"*cos(t),"<<y<<"+"<<r<<"*sin(t)";
-     EndCuadro();
+     std::cout << x << " " << y << std::endl;
+ //    std::cout<<" , "<<x<<"+"<<r<<"*cos(t),"<<y<<"+"<<r<<"*sin(t)";
+ //    EndCuadro();
  }
 
  return 0;	
