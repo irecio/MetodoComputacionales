@@ -90,17 +90,18 @@ int main( int argc, char *argv[] ){
 	   t += deltat; 
     }
 
-   StartAnim();
+   ///StartAnim();
    double rsun = 0.3;
    double rearth = 0.05;
    double Xsun[1] = {0.};
    double Ysun[1] = {0.};
 
    for(int i = 0; i < Size; i++){
-     StartCuadro();
-     GetPoint(Xsun[0],Ysun[0], rsun);
-     GetPoint(X[i],Y[i], rearth);     
-     EndCuadro();
+    // StartCuadro();
+    // GetPoint(Xsun[0],Ysun[0], rsun);
+    // GetPoint(X[i],Y[i], rearth);     
+    // EndCuadro();
+	   std::cout << time[i] << " "<< Energy[i] << std::endl;
    } 
 
 
