@@ -18,6 +18,9 @@ class TVector{
 
     virtual void Print();
 
+    friend std::ostream & operator << (std::ostream &out, const TVector &V);
+
+
    private: // accesible solo por metodos de la misma clase
 
    protected: // accesible por metodos propios y por clases heredadas.
@@ -40,8 +43,15 @@ class TVector3 : public TVector{ // Heredar todos los metodos publicos y protect
 
     friend std::ostream & operator << (std::ostream &out, const TVector3 &V);
 
-   private:
-    double z;    
+
+    friend TVector3 operator+( const TVector3 &V1, const TVector3 &V2 );
+    friend TVector3 operator-( const TVector3 &V1, const TVector3 &V2 );
+    
+    friend bool operator==(const TVector3 &V1, const TVector3 &V2 );
+    friend bool operator!=(const TVector3 &V1, const TVector3 &V2 ); 
+
+    private:
+     double z;    
   
 };
 

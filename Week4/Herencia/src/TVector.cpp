@@ -12,6 +12,11 @@ void TVector::SetY(double y_){ y = y_; }
 double TVector::GetX(){ return x; }
 double TVector::GetY(){ return y; }
 
+std::ostream & operator << (std::ostream &out, const TVector &V){
+  out << V.x << " " << V.y << std::endl;
+  return out;
+}
+
 void TVector::Print(){
    std::cout << x << " " << y << std::endl;
 }
@@ -33,6 +38,25 @@ double TVector3::GetZ(){ return z; }
 std::ostream & operator << (std::ostream &out, const TVector3 &V){
    out << V.x << " " << V.y << " " << V.z << std::endl;
    return out;  
+}
+
+
+TVector3 operator+( const TVector3 &V1, const TVector3 &V2 ){
+   TVector3 new_( V1.x+V2.x , V1.y+V2.y, V1.z+V2.z);
+   return new_;
+}
+TVector3 operator-( const TVector3 &V1, const TVector3 &V2 ){
+   TVector3 new_( V1.x-V2.x , V1.y-V2.y, V1.z-V2.z);
+   return new_;
+}
+
+bool operator==(const TVector3 &V1, const TVector3 &V2 ){
+   return ( ( V1.x == V2.x ) && ( V1.y == V2.y ) && ( V1.z == V2.z ) ) ;
+  // return ( ( V1.x == V2.x ) ) ; // para otro tipo de clases
+}
+
+bool operator!=(const TVector3 &V1, const TVector3 &V2 ){
+   return ( ( V1.x != V2.x ) || ( V1.y != V2.y ) || ( V1.z != V2.z ) ) ;
 }
 
 
