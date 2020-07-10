@@ -23,7 +23,17 @@ int main(){
        else std::cout << " Son Diferentes " << std::endl;       
 
        if(V2 != V3) std::cout << " Son diferentes " << std::endl;
-       else std::cout << " Son iguales " << std::endl;       
+       else std::cout << " Son iguales " << std::endl;
+
+       TVector3 *AllVector[3];
+//       for(int i = 0; i < 3; i++)
+	AllVector[0] = &V2;
+	AllVector[1] = &V3;
+	AllVector[2] = &V4;
+
+        for(int i = 0; i < 3; i++){
+	   std::cout << AllVector[i]->GetX() << std::endl;
+	}	
 
 
 
